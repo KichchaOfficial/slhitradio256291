@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SL HIT RADIO</title>
+<style>
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0a0a;
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .radio-container {
+    background: #111;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 25px 30px 40px 30px;
+    box-shadow: 0 0 20px rgba(255, 30, 30, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 15px;
+    filter: brightness(0.9);
+  }
+
+  .radio-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 18px;
+    letter-spacing: 3px;
+    color: #ff3b3b;
+    text-shadow: 0 0 6px #b02121;
+  }
+
+  .player-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .play-pause-btn {
+    background: #330000;
+    border: 2px solid #ff3b3b;
+    color: #ff3b3b;
+    font-size: 1.5rem;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .play-pause-btn:hover {
+    background: #ff3b3b;
+    color: #111;
+  }
+
+  .now-on-air {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #ff3b3b;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+  }
+
+  .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #ff3b3b;
+    margin-left: 12px;
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 8px #ff3b3b;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.7);
+      opacity: 0.6;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.7);
+      opacity: 0.6;
+    }
+  }
+
+  .featured-post {
+    background: #220000;
+    padding: 20px 25px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    width: 100%;
+    box-shadow: inset 0 0 10px #550000;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  nav a {
+    color: #ff3b3b;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 9px 18px;
+    border: 2px solid #ff3b3b;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+  nav a:hover {
+    background: #ff3b3b;
+    color: #111;
+  }
+
+  /* Sections for About Us, etc */
+  section {
+    max-width: 460px;
+    width: 100%;
+    margin-bottom: 30px;
+    background: #1b1b1b;
+    padding: 18px 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px #330000;
+  }
+  section h2 {
+    color: #ff3b3b;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    letter-spacing: 1.2px;
+  }
+  section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ddd;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .radio-container {
+      padding: 20px 20px 30px 20px;
+    }
+    .radio-title {
+      font-size: 1.6rem;
+    }
+    .featured-post {
+      font-size: 1rem;
+      padding: 15px 20px;
+    }
+    .play-pause-btn {
+      width: 48px;
+      height: 48px;
+      font-size: 1.3rem;
+    }
+    nav a {
+      padding: 7px 14px;
+      font-size: 0.9rem;
+    }
+    section {
+      padding: 15px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="radio-container">
+  <!-- Logo -->
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Radio_Icon.svg/1024px-Radio_Icon.svg.png"
+    alt="SL HIT RADIO Logo"
+    class="logo"
+  />
+
+  <!-- Title -->
+  <h1 class="radio-title">SL HIT RADIO</h1>
+
+  <!-- Player Controls -->
+  <div class="player-controls">
+    <button id="playPauseBtn" class="play-pause-btn" aria-label="Play/Pause">
+      ►
+    </button>
+    <div class="now-on-air">
+      NOW ON AIR
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <!-- Featured Post -->
+  <div class="featured-post">
+    🎧 Tune in now for the best hits, exclusive shows, and non-stop music 24/7.
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#listen-live">Listen Live</a>
+    <a href="#about-us">About Us</a>
+    <a href="#contact-us">Contact Us</a>
+    <a href="#our-mission">Our Mission</a>
+    <a href="#our-vision">Our Vision</a>
+  </nav>
+
+  <!-- Sections -->
+  <section id="listen-live">
+    <h2>Listen Live</h2>
+    <p>Enjoy our live streaming anywhere, anytime on your favorite device.</p>
+  </section>
+
+  <section id="about-us">
+    <h2>About Us</h2>
+    <p>SL HIT RADIO is dedicated to bringing you the best music and entertainment with a focus on Sri Lankan and international hits.</p>
+  </section>
+
+  <section id="contact-us">
+    <h2>Contact Us</h2>
+    <p>Email: info@slhitradio.com<br />Phone: +94 11 123 4567</p>
+  </section>
+
+  <section id="our-mission">
+    <h2>Our Mission</h2>
+    <p>To connect people through music by delivering quality radio programming that inspires and entertains.</p>
+  </section>
+
+  <section id="our-vision">
+    <h2>Our Vision</h2>
+    <p>To be Sri Lanka’s leading radio station known for innovation, diversity, and outstanding listener experience.</p>
+  </section>
+
+  <!-- Audio Element -->
+  <audio id="radioPlayer" preload="none" src="https://stream.zeno.fm/6qramq1e308uv"></audio>
+</div>
+
+<script>
+  const playPauseBtn = document.getElementById('playPauseBtn');
+  const radioPlayer = document.getElementById('radioPlayer');
+
+  function updateButton() {
+    if (radioPlayer.paused) {
+      playPauseBtn.textContent = '►'; // play symbol
+    } else {
+      playPauseBtn.textContent = '❚❚'; // pause symbol
+    }
+  }
+
+  playPauseBtn.addEventListener('click', () => {
+    if (radioPlayer.paused) {
+      radioPlayer.play();
+    } else {
+      radioPlayer.pause();
+    }
+    updateButton();
+  });
+
+  radioPlayer.addEventListener('ended', updateButton);
+  radioPlayer.addEventListener('pause', updateButton);
+  radioPlayer.addEventListener('play', updateButton);
+
+  updateButton();
+</script>
+
+</body>
+</html>
